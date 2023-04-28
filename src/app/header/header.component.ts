@@ -5,4 +5,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  
+  @Output() optionSelectClicked = new EventEmitter<string>();
+
+  onOptionSelectClicked(option: string) {
+    this.optionSelectClicked.emit(option);
+  }
+}

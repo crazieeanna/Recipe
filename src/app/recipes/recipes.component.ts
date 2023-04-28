@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RecipeModel } from './recipes.model';
 
 @Component({
   selector: 'app-recipes',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent {
+
+  recipeDisplay!: RecipeModel;
+
+  onRecipeDetailDisplay(recipes: RecipeModel) {
+    this.recipeDisplay = recipes;
+  }
 
 }

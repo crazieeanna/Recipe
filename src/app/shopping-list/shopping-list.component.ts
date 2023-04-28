@@ -15,4 +15,8 @@ export class ShoppingListComponent {
     new ShoppingListModel('Milk', 5)
   ];
 
+  onDisplayShopListIng(shopListIngAdd: ShoppingListModel) {
+    this.shoppingList.push(shopListIngAdd);
+  }
+
 }
