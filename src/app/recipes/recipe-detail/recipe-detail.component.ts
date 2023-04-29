@@ -19,7 +19,7 @@ export class RecipeDetailComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.recipeDetailsID = +params['id'];
-        this.recipeDetailsDisplay = this.recipesService.getRecipeID(this.recipeDetailsID);
+        this.recipeDetailsDisplay = this.recipesService.getRecipeListByID(this.recipeDetailsID);
       }
     );
   }

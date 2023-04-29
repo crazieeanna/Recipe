@@ -22,4 +22,8 @@ export class ShoppingListComponent implements OnInit {
     );
   }
 
+  onClickingShopItem(shopItemIndex: number) {
+    this.shoppingListService.loadShopListItemID.emit(shopItemIndex);
+  }
+
 }

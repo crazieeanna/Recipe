@@ -25,7 +25,7 @@ export class RecipesService {
         this.shoppingListService.getShopListIng(recipeIng);
     }
 
-    getRecipeID(index: number) {
+    getRecipeListByID(index: number) {
         return this.recipeList[index];
     }
 }
