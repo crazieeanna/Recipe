@@ -1,0 +1,17 @@
+.btn {
+    position: relative;
+    right: 20px;
+    margin-left: 20px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+textarea.ng-invalid {
+    border: 1px solid red;
+}

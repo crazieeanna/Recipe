@@ -6,7 +6,7 @@ import { ShoppingListService } from "../shopping-list/shopping-list.service";
 @Injectable()
 export class RecipesService {
 
-    recipeDetailsDisplayedOnClick = new EventEmitter<RecipeModel>();
+    recipeDetailsDisplayedOnClick = new EventEmitter<RecipeModel[]>();
 
     constructor(private shoppingListService: ShoppingListService) {}
 
@@ -27,5 +27,20 @@ export class RecipesService {
 
     getRecipeListByID(index: number) {
         return this.recipeList[index];
+    }
+
+    addRecipeEditList(recipe: RecipeModel) {
+        this.recipeList.push(recipe);
+        this.recipeDetailsDisplayedOnClick.emit(this.recipeList.slice());
+    }
+
+    updateRecipeEditList(index: number, newRecipe: RecipeModel) {
+        this.recipeList[index] = newRecipe;
+        this.recipeDetailsDisplayedOnClick.emit(this.recipeList.slice());
+    }
+
+    deleteRecipeList(index: number) {
+        this.recipeList.splice(index, 1);
+        this.recipeDetailsDisplayedOnClick.emit(this.recipeList.slice());
     }
 }
