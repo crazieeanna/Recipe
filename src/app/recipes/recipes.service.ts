@@ -43,4 +43,9 @@ export class RecipesService {
         this.recipeList.splice(index, 1);
         this.recipeDetailsDisplayedOnClick.emit(this.recipeList.slice());
     }
+
+    setRecipeList(recipe: RecipeModel[]) {
+        this.recipeList = recipe;
+        this.recipeDetailsDisplayedOnClick.emit(this.recipeList.slice());
+    }
 }
