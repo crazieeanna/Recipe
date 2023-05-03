@@ -8,8 +8,17 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent {
   
   @Output() optionSelectClicked = new EventEmitter<string>();
+  
+  constructor(private dataStorageService: DataStorageService) {}
 
   onOptionSelectClicked(option: string) {
     this.optionSelectClicked.emit(option);
+  }
+  
+  onSave() {
+    this.dataStorageService.onSaveData();
+  }
+  onFetch() {
+    this.dataStorageService.onFetchData();
   }
 }
