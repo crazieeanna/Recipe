@@ -12,16 +12,11 @@ export class HeaderComponent {
   
   constructor(private dataStorageService: DataStorageService) {}
 
-  constructor(private dataStorageService: DataStorageService) {}
 
   onOptionSelectClicked(option: string) {
     this.optionSelectClicked.emit(option);
   }
-<<<<<<< HEAD
-
-=======
   
->>>>>>> f0e781b3fe6b5a376cd3d575d97dd30861ca18cd
   onSave() {
     this.dataStorageService.onSaveData();
   }
