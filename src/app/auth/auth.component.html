@@ -1,5 +1,8 @@
 <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <div class="alert alert-danger" *ngIf="errorSignUpLogin">
+            <p>{{errorSignUpLogin}}</p>
+        </div>
         <form (ngSubmit)="onSubmit(authForm)" #authForm="ngForm">
             <div class="form-group">
                 <label for="email">E-mail</label>
@@ -7,7 +10,7 @@
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" ngModel name="password" required min.length="6">
+                <input type="password" id="password" class="form-control" ngModel name="password" required minlength="6">
             </div>
             <div>
                 <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">{{ isLoginMode ? 'Login' : 'Sign Up' }}</button> |
