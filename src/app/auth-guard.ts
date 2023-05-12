@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from "@angular/router";
 import { Observable } from "rxjs";
 import { AuthService } from "./auth/auth.service";
-import { map, tap } from "rxjs/operators";
+import { map} from "rxjs/operators";
 
 
 @Injectable()

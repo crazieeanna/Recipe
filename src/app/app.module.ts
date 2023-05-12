@@ -42,9 +42,15 @@ import { AuthGuard } from './auth-guard';
     FormsModule,
     ApRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [RecipesService, ShoppingListService, DataStorageService, AuthService, AuthGuard],
+  providers: [
+    RecipesService, 
+    ShoppingListService, 
+    DataStorageService, 
+    AuthService, 
+    AuthGuard,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
