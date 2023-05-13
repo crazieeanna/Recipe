@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { PreloadAllModules, PreloadingStrategy, RouterModule, Routes } from "@angular/router";
 import { RecipesComponent } from "./recipes/recipes.component";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { RecipeStartComponent } from "./recipes/recipe-start/recipe-start.component";
@@ -18,10 +18,13 @@ const recipeRoutes: Routes = [
     ]},
     {path: 'shopping-list', component: ShoppingListComponent},
     {path: 'authentication', component: AuthComponent}
+
+    // {path: '/shopping-list', loadChildren: () => import('./shopping-list/shopping-list.module').then(module => module.ShoppingListModule)},
+    // {path: '/authentication', loadChildren: () => import('./auth/auth.module').then(module => module.AuthModule)}
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(recipeRoutes)],
+    imports: [RouterModule.forRoot(recipeRoutes) ],
     exports: [RouterModule]
 })
 
