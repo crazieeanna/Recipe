@@ -3,6 +3,7 @@ import { EventEmitter, Injectable } from "@angular/core";
 import { UserData } from "./user-data.model";
 import { tap } from "rxjs/operators";
 import { Router } from "@angular/router";
+import { environment } from "src/environments/environment";
 
 interface AuthSignUpLogin {
     kind: string;
@@ -33,7 +34,7 @@ export class AuthService {
     // }
 
     onAuthSignUp(email: string, password: string) {
-        return this.http.post<AuthSignUpLogin>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB2lVFl5DQFep_9Y3rJ3YXUNjsBEKvBmtI', {
+        return this.http.post<AuthSignUpLogin>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.APIkey, {
             email: email,
             password: password,
             returnSecureToken: true
@@ -46,7 +47,7 @@ export class AuthService {
     }
 
     onAuthLogin(email: string, password: string) {
-        return this.http.post<AuthSignUpLogin>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB2lVFl5DQFep_9Y3rJ3YXUNjsBEKvBmtI', {
+        return this.http.post<AuthSignUpLogin>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=I' + environment.APIkey, {
             email: email,
             password: password,
             returnSecureToken: true
